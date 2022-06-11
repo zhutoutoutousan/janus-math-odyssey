@@ -1,7 +1,9 @@
 '''
 # Byzantine Fault Tolerance Model
 ## Related papers:
+- https://medium.com/loom-network/understanding-blockchain-fundamentals-part-1-byzantine-fault-tolerance-245f46fe8419
 - https://sourcegraph.com/search?q=context:global+byzantine&patternType=literal
+- https://lamport.azurewebsites.net/pubs/byz.pdf
 
 # My thinking
 ## How to make a Byzantine Fault Tolerance Model 100% robust?
@@ -16,5 +18,11 @@ class byzantine_model:
     # __init__
     def __init__(self):
         self.generals = []
+    
+    def add_general(self, general):
+        self.generals.append(general)
 
+    def train(self):
+        pass
+    
 

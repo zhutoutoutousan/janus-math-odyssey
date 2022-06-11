@@ -1,5 +1,11 @@
 '''
 Markov Chain
+
+https://www.youtube.com/watch?v=WT6jI8UgROI
+
+https://www.upgrad.com/blog/markov-chain-in-python-tutorial/
+https://www.datacamp.com/tutorial/markov-chains-python-tutorial
+
 '''
 
 class markov_chain:
