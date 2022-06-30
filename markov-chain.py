@@ -8,6 +8,9 @@ https://www.datacamp.com/tutorial/markov-chains-python-tutorial
 
 '''
 
+import random
+import matplotlib.pyplot as plt
+
 class markov_chain:
     '''
     Markov Chain
@@ -56,3 +59,48 @@ class markov_chain:
             random_number -= self.chain[previous][i]
             if random_number <= 0:
                 return i
+
+    def generate_string(self, length):
+        '''
+        Generates a string
+        '''
+        string = ""
+        string += self.seed[0]
+        for i in range(length - 1):
+            string += self.generate_next(string[i])
+        return string
+
+    def test(self):
+        '''
+        Tests the chain
+        '''
+        # Generate a chain
+        chain = self.generate_chain(10)
+        # Matplotlib
+        plt.plot(chain)
+
+if __name__ == "__main__":
+    '''
+    Main
+    '''
+    # Generate a seed
+    seed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    # Create a chain
+    chain = markov_chain(seed)
+    # Test the chain
+    chain.test()
+    # Generate a string
+    string = chain.generate_string(10)
+    # Print the string
+    print(string)
+    # Matplotlib
+    plt.show()
+    # Print the string
+    print(string)
+    # Print the seed
+    print(seed)
+    # Print the chain
+    print(chain.chain)
+    # Print the chain length
+    print(len(chain.chain))
+    
